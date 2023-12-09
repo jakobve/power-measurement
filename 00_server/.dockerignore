@@ -1,0 +1,4 @@
+# .dockerignore
+
+# Exclude the venv directory
+/venv

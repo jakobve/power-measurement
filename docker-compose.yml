@@ -1,0 +1,14 @@
+services:
+  power-measurement-server:
+    image: 14051998/power-measurement-server
+    build: ./00_server/
+    ports:
+      - "5000:5000/udp"
+  power-exporter:
+    image: 14051998/power-exporter
+    build: ./01_exporter/
+      - "8000:8000"
+    depends_on:
+      - power-measurement-server
+  
+    
