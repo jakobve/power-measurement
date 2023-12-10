@@ -1,4 +1,3 @@
-from operator import truediv
 from battery_state import BatteryState
 import logging
 
