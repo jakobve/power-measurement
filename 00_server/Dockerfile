@@ -8,7 +8,7 @@ ENV VIRTUAL_ENV /venv
 WORKDIR $DIRPATH
 
 # 
-RUN apk update && && apk upgrade --no-cache && apk add --no-cache build-base linux-headers
+RUN apk update && apk upgrade --no-cache && apk add --no-cache build-base linux-headers
 
 # CREATE VIRTUAL ENV
 RUN mkdir $VIRTUAL_ENV

@@ -61,8 +61,8 @@ BATTERY_STATE_REL = Gauge(METRIC_NAME_BATTERY_REL, METRIC_DESC_BATTERY_REL)
 def update_metrics(new_data: PowerMeasurement) -> None:
     """ Updates the power-related metrics based on the new data. """
     #increment_counter_to(ENERGY_CONSUMPTION_COUNTER, new_data.energy_consumption / 1000)  # mAs -> A
-    ENERGY_CONSUMPTION_W.set(new_data.device_energy_consumption_mw)
-    ENERGY_CONSUMPTION_MW.set(new_data.device_energy_consumption_mw / 1000) # mW -> W
+    ENERGY_CONSUMPTION_MW.set(new_data.device_energy_consumption_mw)
+    ENERGY_CONSUMPTION_W.set(new_data.device_energy_consumption_mw / 1000) # mW -> W
 
     ENERGY_CONSUMPTION_MA.set(new_data.device_energy_consumption_ma)  # mA
     ENERGY_CONSUMPTION_A.set(new_data.device_energy_consumption_ma / 1000)  # mA -> A
