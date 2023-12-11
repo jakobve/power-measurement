@@ -28,7 +28,7 @@ class EnergyManagementSystem:
        # Return mock data
        # return 1500
        jetson = jtop()
-       jetson.start
+       jetson.start()
        stat = int(jetson.power['tot']['curr'])
        jetson.close()
        return stat
@@ -38,7 +38,7 @@ class EnergyManagementSystem:
        # Return mock data
        #return 7500
        jetson = jtop()
-       jetson.start
+       jetson.start()
        stat = int(jetson.power['tot']['power'])
        jetson.close()
        return stat
