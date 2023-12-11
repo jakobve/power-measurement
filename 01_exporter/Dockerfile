@@ -21,6 +21,9 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 # Copy application files
 COPY . .
 
+# Upgrade pip wheel and setuptools
+RUN pip install --upgrade pip wheel setuptools
+
 # Install Python dependencies
 RUN pip install -r requirements.txt
 
