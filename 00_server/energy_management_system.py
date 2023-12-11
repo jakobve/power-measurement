@@ -4,7 +4,7 @@ from battery import Battery
 from energy_source import EnergySource
 from battery_state import BatteryState
 from power_measurement import PowerMeasurement
-#from jtop import jtop
+from jtop import jtop
 import time
 
 class EnergyManagementSystem:
@@ -26,18 +26,22 @@ class EnergyManagementSystem:
     # Returns data in mA
     def get_device_energy_consumption_ma(self):
        # Return mock data
-       return 1500
-       #with jtop() as jetson:
-       #     if jetson.ok():
-       #         return int(jetson.power['tot']['curr'])
+       # return 1500
+       jetson = jtop()
+       jetson.start
+       stat = int(jetson.power['tot']['curr'])
+       jetson.close()
+       return stat
             
     # Get energy consumption from device in milli Watt
     def get_device_energy_consumption_mw(self):
        # Return mock data
-       return 7500
-       # with jtop() as jetson:
-       #    if jetson.ok():
-       #        return int(jetson.power['tot']['power'])
+       #return 7500
+       jetson = jtop()
+       jetson.start
+       stat = int(jetson.power['tot']['power'])
+       jetson.close()
+       return stat
 
     # Returns 
     def get_battery_state(self):
